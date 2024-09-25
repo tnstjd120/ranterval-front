@@ -1,0 +1,23 @@
+{
+    "singleQuote": true,
+    "useTabs": false,
+    "jsxBracketSameLine": false,
+    "bracketSpacing": true,
+    "trailingComma": "all",
+    "semi": true,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "importOrder": [
+        "^next",
+        "^react",
+        "<THIRD_PARTY_MODULES>",
+        "^~/components/(.*)",
+        "^@hooks/(.*)",
+        "^@services/(.*)",
+        "^@lib/(.*)",
+        "^@constants/(.*)",
+        "^@models/(.*)",
+        "^@providers/(.*)",
+        "^[./]"
+    ]
+}
