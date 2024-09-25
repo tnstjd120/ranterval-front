@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "코드 췤"
+
+yarn lint
+yarn lint:fix
+npx lint-staged
