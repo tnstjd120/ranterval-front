@@ -3,6 +3,8 @@
 import { Global, css } from '@emotion/react';
 import emotionReset from 'emotion-reset';
 
+import theme from './theme';
+
 export default function GlobalStyle() {
   return (
     <Global
@@ -32,7 +34,7 @@ export default function GlobalStyle() {
         }
 
         body {
-          background: '#ffffff';
+          background: ${theme.colors.black['300']};
           height: 100vh;
           height: 100dvh;
           overscroll-behavior-y: none;
