@@ -1,3 +1,4 @@
+import { Layout } from '@/components';
 import Providers from '@/providers';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
@@ -35,7 +36,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={pretendard.variable}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Layout>{children}</Layout>
+        </Providers>
       </body>
     </html>
   );
