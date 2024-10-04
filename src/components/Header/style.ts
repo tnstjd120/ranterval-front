@@ -10,10 +10,12 @@ export const Header = styled.header`
   top: 0;
   transform: translateX(-50%);
   background-color: ${({ theme }) => theme.colors.black[300]};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grey['700']};
 `;
 
 export const Inner = styled.div`
-  padding: 20px 0;
+  height: 100%;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,9 +23,11 @@ export const Inner = styled.div`
 
 export const LogoLink = styled(Link)`
   width: 146px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const Right = styled.div`
