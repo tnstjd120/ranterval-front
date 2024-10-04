@@ -3,11 +3,11 @@
 import { ReactNode } from 'react';
 import * as S from './style';
 
-type LayoutProps = {
+interface Props {
   children: ReactNode;
-};
+}
 
-function Layout({ children }: LayoutProps) {
+function Layout({ children }: Props) {
   return <S.Layout>{children}</S.Layout>;
 }
 
