@@ -23,7 +23,8 @@
     "no-console": "warn",
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react-hooks/exhaustive-deps": "off"
   },
   "ignorePatterns": ["build", "dist", "public"]
 }
