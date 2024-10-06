@@ -15,6 +15,7 @@ export const Avatar = styled.figure<{ size: Size }>`
   border-radius: 50%;
   outline: 2px solid ${({ theme }) => theme.colors.black[200]};
   background-color: ${({ theme }) => theme.colors.white};
+  cursor: pointer;
 
   > img {
     object-fit: cover;
