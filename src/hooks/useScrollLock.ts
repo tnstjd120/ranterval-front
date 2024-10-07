@@ -1,31 +1,24 @@
-import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const useScrollLock = () => {
-  let originalOverflow = '';
-  let originalPaddingRight = '';
+  const scrollPositionRef = useRef(0);
 
   const handleLock = () => {
-    originalOverflow = document.documentElement.style.overflow;
-    originalPaddingRight = document.body.style.paddingRight;
+    scrollPositionRef.current = window.scrollY;
 
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    if (scrollBarWidth > 0) {
-      document.body.style.paddingRight = `${scrollBarWidth}px`;
-      document.body.style.boxSizing = 'unset';
-    }
+    const scrollBarHeight = window.innerHeight - document.documentElement.clientHeight;
 
-    document.documentElement.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.overflowY = scrollBarWidth ? 'scroll' : 'hidden';
+    document.body.style.overflowX = scrollBarHeight ? 'scroll' : 'hidden';
   };
 
   const handleUnLock = () => {
-    document.documentElement.style.overflow = originalOverflow || 'unset';
-    document.body.style.paddingRight = originalPaddingRight || '0px';
-    document.body.style.boxSizing = 'border-box';
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('overflow');
+    window.scrollTo(0, scrollPositionRef.current);
   };
-
-  useEffect(() => {
-    return () => handleUnLock();
-  }, []);
 
   return {
     handleLock,
