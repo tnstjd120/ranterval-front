@@ -24,6 +24,37 @@ const colors = {
   error: '#FE3E40',
 };
 
+const background = {
+  default: colors.black[300],
+  light: colors.grey[100],
+  dark: colors.black[600],
+};
+
+const text = {
+  default: colors.white,
+  secondary: colors.grey[500],
+  disabled: colors.grey[400],
+  error: colors.error,
+  success: colors.success,
+  warning: colors.warning,
+};
+
+const breakpoints = {
+  mobile: 640,
+  desktop: 1140,
+};
+
+const padding = {
+  mobile: {
+    inline: 16,
+    block: 80,
+  },
+  desktop: {
+    inline: 32,
+    block: 80,
+  },
+};
+
 const typography = {
   h1: {
     fontSize: '3rem',
@@ -77,6 +108,6 @@ const typography = {
   },
 };
 
-const theme = { colors, typography };
+const theme = { colors, typography, breakpoints, background, text, padding };
 
 export default theme;
