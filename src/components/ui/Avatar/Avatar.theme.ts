@@ -1,5 +1,5 @@
-export enum Size {
-  small = 20,
-  medium = 40,
-  large = 60,
-}
+export const Size = {
+  small: 20,
+  medium: 40,
+  large: 60,
+} as const;
