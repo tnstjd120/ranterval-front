@@ -1,21 +1,12 @@
 import Image from 'next/image';
 import { AvatarContainer } from './Avatar.styled';
-import { Size } from './Avatar.theme';
+import { AvatarSize } from './Avatar.theme';
+import { AvatarProps } from './Avatar.type';
 
-export type AvatarVariant = 'circle' | 'rounded' | 'square';
-export type AvatarSize = 'small' | 'medium' | 'large';
-
-export interface AvatarProps {
-  variant: AvatarVariant;
-  size: AvatarSize;
-  src: string;
-  alt: string;
-}
-
-export default function Avatar({ variant, size, ...rest }: AvatarProps) {
+export default function Avatar({ variant = 'circle', size = 'medium', ...rest }: AvatarProps) {
   return (
     <AvatarContainer variant={variant} size={size}>
-      <Image width={Size[size]} height={Size[size]} {...rest} />
+      <Image width={AvatarSize[size]} height={AvatarSize[size]} {...rest} />
     </AvatarContainer>
   );
 }
