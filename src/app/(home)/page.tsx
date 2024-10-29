@@ -13,8 +13,11 @@ export default function Home() {
   return (
     <>
       <TestTitle>Hello, Ranterval</TestTitle>
+      <Avatar size="large" text="하이루" />
       <Avatar src="/images/og-image.png" alt="test" />
-      <AvatarGroup limit={3}>
+      <Avatar size="large" src="/images/og-image.png" alt="test" />
+
+      <AvatarGroup limit={3} size="large">
         <Avatar src="/images/og-image.png" alt="test" />
         <Avatar src="/images/og-image.png" alt="test" />
         <Avatar src="/images/og-image.png" alt="test" />

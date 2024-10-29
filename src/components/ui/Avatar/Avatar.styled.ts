@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { AvatarSize, AvatarVariant } from './Avatar.theme';
+import { AvatarSize, AvatarTextSize, AvatarVariant } from './Avatar.theme';
 import { AvatarSizeUnion, AvatarVariantUnion } from './Avatar.type';
 
 export const AvatarContainer = styled.div<{
@@ -22,4 +22,15 @@ export const AvatarContainer = styled.div<{
     object-fit: cover;
     object-position: center;
   }
+`;
+
+export const AvatarTextContainer = styled(AvatarContainer)`
+  display: flex;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+
+  font-size: ${({ size }) => AvatarTextSize[size]};
+  background-color: ${({ theme }) => theme.colors.black[400]};
+  color: ${({ theme }) => theme.colors.white};
 `;
