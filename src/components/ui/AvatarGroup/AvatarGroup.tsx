@@ -1,8 +1,9 @@
 import React from 'react';
 import { AvatarGroupContainer } from './AvatarGroup.styled';
 import { AvatarGroupProps } from './AvatarGroup.type';
+import Avatar from '../Avatar/Avatar';
 
-export default function AvatarGroup({ children, limit }: AvatarGroupProps) {
+export default function AvatarGroup({ children, limit, size = 'medium' }: AvatarGroupProps) {
   const childrenArray = React.Children.toArray(children);
   const childrenArrayLength = childrenArray.length;
 
@@ -12,8 +13,10 @@ export default function AvatarGroup({ children, limit }: AvatarGroupProps) {
   return (
     <AvatarGroupContainer>
       <>
-        {previewAvatars.map((avatar) => avatar)}
-        <div>+{extraCount}</div>
+        {React.Children.map(previewAvatars, (avatar) =>
+          React.cloneElement(avatar as React.ReactElement, { size }),
+        )}
+        <Avatar size={size} text={`+${extraCount}`} />
       </>
     </AvatarGroupContainer>
   );
