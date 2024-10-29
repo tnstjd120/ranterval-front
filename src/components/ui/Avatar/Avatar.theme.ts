@@ -4,6 +4,12 @@ export const AvatarSize = {
   large: 60,
 } as const;
 
+export const AvatarTextSize = {
+  small: '0.75rem',
+  medium: '1rem',
+  large: '1.25rem',
+} as const;
+
 export const AvatarVariant = {
   circle: '50%',
   rounded: '12px',
